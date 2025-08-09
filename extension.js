@@ -10,7 +10,7 @@ function init() {
 
 function enable() {
     // Create a new label with an emoji as the button text
-    const label = new St.Label({
+    label = new St.Label({
         text: '🔮',
         y_align: Clutter.ActorAlign.CENTER, // Vertically center the label in the panel
     });
@@ -33,7 +33,7 @@ function enable() {
 function disable() {
     // Remove the label from the panel when the extension is disabled
     if (label) {
-        Main.panel._rightBox.remove_child(label);
+        label.destroy();
         label = null;
     }
 }
